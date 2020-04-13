@@ -10,11 +10,28 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    let colors: [Color] = [.red, .green, .blue]
+
+    
     var body: some View {
-        Text("Hello, World!")
-            //.frame(maxWidth: .infinity, maxHeight: .infinity)
-            .frame(maxWidth: 600, maxHeight: 400)
+        VStack {
+
+                Text("Hello, World!").frame(maxWidth: 600, maxHeight: 400)
+                    //.frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
+//            }
+
+
+            ForEach(colors, id: \.self) { color in
+                Text(color.description.capitalized)
+                    .padding()
+                    .background(color)
+            }
+        }
     }
+
+        
 }
 
 
@@ -24,3 +41,4 @@ struct ContentView_Previews: PreviewProvider {
     }
     
 }
+
