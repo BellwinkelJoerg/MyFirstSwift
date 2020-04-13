@@ -28,14 +28,27 @@ struct ContentView: View {
 
             Form{
                 Section {
-                    TextField("Amount", text: $Value1)
+                    TextField("Eingabe Value1: ", text: $Value1)
                 }
 
                 Section {
                     Text("$\(Value1)")
                 }
             }
-                    
+
+            Form{
+                Section {
+                    TextField("Eingabe Value2: ", text: $Value2)
+                }
+
+                Section {
+                    Text("$\(Value2)")
+                }
+            }
+
+            
+            
+            
             ForEach(colors, id: \.self) { color in
                 Text(color.description.capitalized)
                     .padding()
