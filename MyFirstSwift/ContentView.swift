@@ -12,14 +12,29 @@ import SwiftUI
 struct ContentView: View {
 
     let colors: [Color] = [.red, .green, .blue]
-
+//    let value1: Int = 0
+//    let value2: Int = 0
+    @State private var Value1 = ""
+    @State private var Value2 = ""
+    
+    
     
     var body: some View {
         VStack {
-            
+
             Text("Hello, World!")
             //Text("Hello, World!").frame(minWidth:300, maxWidth: 600, minHeight: 400, maxHeight: 400)
                     //.frame(maxWidth: .infinity, maxHeight: .infinity)
+
+            Form{
+                Section {
+                    TextField("Amount", text: $Value1)
+                }
+
+                Section {
+                    Text("$\(Value1)")
+                }
+            }
                     
             ForEach(colors, id: \.self) { color in
                 Text(color.description.capitalized)
